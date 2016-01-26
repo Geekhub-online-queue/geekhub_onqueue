@@ -3,7 +3,7 @@ class CreateRecords < ActiveRecord::Migration
     create_table :records do |t|
       t.string :name
       t.string :phone
-      t.datatime :data
+      t.datetime :data
 
       t.timestamps null: false
     end

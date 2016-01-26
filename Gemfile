@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'decent_exposure'
+gem 'slim-rails'
 gem 'rails', '4.2.4'
 gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
