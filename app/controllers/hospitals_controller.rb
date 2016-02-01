@@ -3,17 +3,11 @@ class HospitalsController < ApplicationController
   expose(:hospitals)
 
   def create
-    if hospital.save
-      redirect_to hospital
-    else
-      render :new
-    end
+    redirect_to hospital if hospital.save
   end
 
   def update
-    if hospital.save
-      redirect_to hospital
-    end
+    create
   end
 
   def destroy
@@ -25,6 +19,6 @@ class HospitalsController < ApplicationController
   private
 
   def hospital_params
-    params.require(:hospital).permit(:title, :phone)
+    params.require(:hospital).permit!
   end
 end
