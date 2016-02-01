@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   get 'welcome/index'
 
-  resources :hospitals
+  resources :hospitals do
+    resources :doctors
+  end
   root 'welcome#index'
 
 end

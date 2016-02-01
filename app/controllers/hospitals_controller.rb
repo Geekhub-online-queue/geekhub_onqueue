@@ -1,6 +1,7 @@
 class HospitalsController < ApplicationController
   expose(:hospital, attributes: :hospital_params)
   expose(:hospitals)
+  expose(:doctors)
 
   def create
     redirect_to hospital if hospital.save
