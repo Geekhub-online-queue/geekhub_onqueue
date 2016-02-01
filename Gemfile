@@ -3,7 +3,10 @@ source 'https://rubygems.org'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise'
 
-gem 'foundation-rails'  
+gem 'geocoder'
+gem 'gmaps4rails'
+
+gem 'foundation-rails'
 gem 'decent_exposure'
 gem 'slim-rails'
 gem 'rails', '4.2.4'
