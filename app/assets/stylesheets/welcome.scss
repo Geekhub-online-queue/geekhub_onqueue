@@ -1,3 +1,9 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.hero {
+  background: url('https://unsplash.imgix.net/reserve/QTrNn7DETWGsjyS5L2n5__MG_8345.jpg?fit=crop&fm=jpg&h=700&q=75&w=1050') no-repeat center center;
+  background-size: cover;
+  height: 80vh;
+  margin-bottom: 3rem;
+}
