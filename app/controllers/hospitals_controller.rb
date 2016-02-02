@@ -1,10 +1,13 @@
 class HospitalsController < ApplicationController
-  expose(:hospital, attributes: :hospital_params)
+  before_action :set_hash
+  expose(:hospital)
   expose(:hospitals)
+  expose(:doctor)
   expose(:doctors)
+  expose(:records)
 
   def create
-    redirect_to hospital if hospital.save
+    hospital.save
   end
 
   def update
@@ -12,14 +15,17 @@ class HospitalsController < ApplicationController
   end
 
   def destroy
-    if hospital.destroy
-      render :index
-    end
+    hospital.destroy
   end
 
   private
 
-  def hospital_params
-    params.require(:hospital).permit!
+  def set_hash
+    @hospitals = Hospital.all
+    @hash = Gmaps4rails.build_markers(@hospitals) do |hos, marker|
+      marker.lat hos.latitude
+      marker.lng hos.longitude
+    end
   end
+  helper_method :set_hash
 end

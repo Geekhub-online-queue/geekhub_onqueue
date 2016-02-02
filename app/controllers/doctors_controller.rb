@@ -1,10 +1,7 @@
-class DoctorsController < ApplicationController
-  expose(:hospital)
-  expose(:doctor)
-  expose(:doctors)
-
+class DoctorsController < HospitalsController
+  
   def create
-    redirect_to doctor if doctor.save
+    doctor.save
   end
 
   def update
@@ -12,12 +9,7 @@ class DoctorsController < ApplicationController
   end
 
   def destroy
-    if doctor.destroy
-      render :index
-    end
+    doctor.destroy
   end
-
-  private
-
 
 end
