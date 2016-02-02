@@ -1,12 +1,11 @@
 class HospitalsController < ApplicationController
-
   before_action :set_hash
-  expose(:hospital, attributes: :hospital_params)
+  expose(:hospital)
   expose(:hospitals)
   expose(:doctors)
 
   def create
-    redirect_to hospital if hospital.save
+    hospital.save
   end
 
   def update
@@ -14,9 +13,7 @@ class HospitalsController < ApplicationController
   end
 
   def destroy
-    if hospital.destroy
-      render :index
-    end
+    hospital.destroy
   end
 
   private
@@ -29,8 +26,4 @@ class HospitalsController < ApplicationController
     end
   end
   helper_method :set_hash
-
-  def hospital_params
-    params.require(:hospital).permit!
-  end
 end
