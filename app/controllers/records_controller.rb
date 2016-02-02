@@ -5,6 +5,8 @@ class RecordsController < DoctorsController
     if record.save
       record.update_attribute(:doctor_id, doctor.id)
       redirect_to(hospital_doctor_path(hospital.id, doctor.id))
+    else
+      render :new
     end
   end
 
