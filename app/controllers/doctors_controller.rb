@@ -1,7 +1,5 @@
 class DoctorsController < HospitalsController
-  expose(:doctor)
-  expose(:doctors)
-
+  
   def create
     doctor.save
   end
