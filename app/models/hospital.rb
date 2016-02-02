@@ -3,7 +3,10 @@ class Hospital < ActiveRecord::Base
   after_validation :geocode
   has_many :doctors
 
+  private
+
   def full_address
     "#{address}, #{city}"
   end
+
 end
