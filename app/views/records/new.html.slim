@@ -1,0 +1,5 @@
+= form_for([hospital, doctor, record]) do |f|
+  = f.text_field :name, placeholder: "Name"
+  = f.text_field :phone, placeholder: "Phone"
+  = f.datetime_select :data, :minute_step => 30, :start_year => 2016, :start_hour => 9, :end_hour => 16
+  = f.submit "Create"

@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   resources :hospitals do
-    resources :doctors
+    resources :doctors do
+      resources :records
+    end
   end
   root 'welcome#index'
 
