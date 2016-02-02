@@ -20,7 +20,8 @@
 @import "foundation_and_overrides";
 
 #map-container {
-   height: 400px;
+   width: 100%;
+   height: 800px;
    border-radius: 16px 16px;
    border-color: #fff;
    border-style: solid;
@@ -29,6 +30,6 @@
    border-width: 7px;
  }
  #map {
-   height: 384px;
+   height: 780px;
    width: 100%;
  }

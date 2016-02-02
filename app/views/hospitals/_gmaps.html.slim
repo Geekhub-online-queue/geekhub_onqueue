@@ -7,9 +7,12 @@ div#map-container
 
 javascript:
   handler = Gmaps.build('Google');
-  handler.buildMap({ internal: {id: 'map'} }, function(){
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
     if(navigator.geolocation)
       navigator.geolocation.getCurrentPosition(displayOnMap);
+    var markers = handler.addMarkers(#{raw @hash.to_json});
+    handler.bounds.extendWith(markers);
+    handler.getMap().setZoom(12);
   });
 
   function displayOnMap(position){
