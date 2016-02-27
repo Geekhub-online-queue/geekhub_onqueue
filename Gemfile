@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise'
 
+gem 'friendly_id', '~> 5.0.0'
+gem 'babosa'
+
 gem 'geocoder'
 gem 'gmaps4rails'
 
