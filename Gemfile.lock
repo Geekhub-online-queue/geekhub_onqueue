@@ -57,6 +57,7 @@ GEM
     arbre (1.0.3)
       activesupport (>= 3.0.0)
     arel (6.0.3)
+    babosa (1.0.2)
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -221,6 +222,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin!
+  babosa
   byebug
   coffee-rails (~> 4.1.0)
   decent_exposure
