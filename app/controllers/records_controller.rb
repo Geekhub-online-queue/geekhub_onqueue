@@ -1,5 +1,6 @@
 class RecordsController < DoctorsController
-    expose(:record, attributes: :record_params)
+  before_filter :authenticate_user!
+  expose(:record, attributes: :record_params)
 
   def create
     if record.save

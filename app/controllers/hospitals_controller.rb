@@ -1,4 +1,5 @@
 class HospitalsController < ApplicationController
+
   before_action :set_hash
   expose(:hospital)
   expose(:hospitals)
