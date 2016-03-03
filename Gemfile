@@ -2,14 +2,10 @@ source 'https://rubygems.org'
 
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise'
-<<<<<<< HEAD
 gem "twitter-bootstrap-rails"
-=======
 
 gem 'friendly_id', '~> 5.0.0'
 gem 'babosa'
-
->>>>>>> 53b7f7a16ca7e443513efb83a97ab5a8180da84d
 gem 'geocoder'
 gem 'gmaps4rails'
 
