@@ -1,3 +1,25 @@
-p = hospital.title
-p = hospital.phone
-= render doctors
+.container
+  .row
+    .col-md-3
+      p PLACE FOR PHOTO
+    .col-md-9
+      h4 Hospital
+      p = hospital.title
+      h4 Phone
+      p = hospital.phone
+      h4 Address
+      p = hospital.address
+    p = hospital.description
+    h1 Doctors
+    .row
+      .col-md-5
+        .table-striped
+          table.table
+            thead
+              tr
+                th Name
+                th Phone
+                th Specialization
+            tbody
+              = render doctors
+    
