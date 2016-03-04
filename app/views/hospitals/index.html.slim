@@ -1,4 +1,13 @@
-- hospitals.each do |h|
-  p = link_to h.title, h
-
-= render 'gmaps'
+.container
+  .row
+    .col-md-5
+      .table-striped
+        table.table
+          thead
+            tr
+              th Name
+              th Address
+          tbody
+            = render hospitals
+    .col-md-7
+      = render 'gmaps'

@@ -1,3 +1,26 @@
-= link_to doctor.name, hospital_doctor_path
-= render doctor.records
-= link_to 'New record', new_hospital_doctor_record_path(doctor.hospital_id, doctor.id)
+.container
+  .row
+    .col-md-3
+      p PLACE FOR PHOTO
+    .col-md-9
+      h4 Hospital
+      p = hospital.title
+      h4 Name
+      p = doctor.name
+      h4 Phone
+      p = doctor.phone
+      h4 Specialization
+      p = doctor.specialization
+  p = doctor.description
+.container
+  .table-striped
+    table.table
+      thead
+        tr
+          th Name
+          th Phone
+          th Time
+      tbody
+        = render doctor.records
+        
+p.text-center = link_to '<i class="glyphicon glyphicon-pencil"></i> New record'.html_safe, new_hospital_doctor_record_path(doctor.hospital_id, doctor.id), :class=>"btn btn-primary" 
