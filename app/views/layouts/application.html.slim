@@ -11,10 +11,7 @@ html lang="en"
     = csrf_meta_tag
 
   body
-    p.notice
-      = notice
-    p.alert
-      = alert
     .container
+      = render 'layouts/messages'
       = render 'layouts/menu'
       == yield
