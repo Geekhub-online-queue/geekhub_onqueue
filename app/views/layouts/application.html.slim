@@ -14,6 +14,7 @@ html lang="en"
     p.notice
       = notice
     p.alert
-      = alert 
-    = render 'layouts/menu'
-    == yield
+      = alert
+    .container
+      = render 'layouts/menu'
+      == yield

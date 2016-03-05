@@ -1,16 +1,18 @@
-.top-bar
-  .top-bar-left
-    ul.menu
-      li.menu-text Online queue
-  .top-bar-right
-    ul.menu
-      li.menu
+nav.navbar.navbar-default
+  .container-fluid
+    .navbar-header
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      ul.nav.navbar-nav.navbar-left
+        li
+          = link_to 'Home', root_path
+      ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
-          span
-            | Здравствуйте, #{current_user.email}
-          = link_to 'Выйти', destroy_user_session_path, :method => :delete
+          li
+            = link_to current_user.email, user_root_path
+          li
+            = link_to 'Выход', destroy_user_session_path, method: :delete
         - else
-          = link_to 'Войти', new_user_session_path
-          | или #{link_to 'Зарегистрироваться', new_user_registration_path}
-
-h1.text-center Online queue
+          li
+            = link_to 'Регистрация', new_user_registration_path
+          li
+            = link_to 'Вход', new_user_session_path
