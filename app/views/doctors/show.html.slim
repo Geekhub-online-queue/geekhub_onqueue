@@ -1,7 +1,7 @@
 .container
   .row
     .col-md-3
-      p PLACE FOR PHOTO
+      = image_tag(doctor.photo.url(:medium))
     .col-md-9
       h4 Hospital
       p = hospital.title
@@ -23,4 +23,4 @@
       tbody
         = render doctor.records
         
-p.text-center = link_to '<i class="glyphicon glyphicon-pencil"></i> New record'.html_safe, new_hospital_doctor_record_path(doctor.hospital_id, doctor.id), :class=>"btn btn-primary" 
+p.text-center = link_to '<i class="glyphicon glyphicon-pencil"></i> New record'.html_safe, new_hospital_doctor_record_path(doctor.hospital_id, doctor.id), :class=>"btn btn-primary"
