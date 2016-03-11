@@ -2,14 +2,15 @@
   .row
     .col-md-3
       p PLACE FOR PHOTO
-    .col-md-9
+    .col-md-3
       h4 Hospital
       p = hospital.title
       h4 Phone
       p = hospital.phone
       h4 Address
       p = hospital.address
-    p = hospital.description
-    h1 Doctors
-    = render doctors
-    
+    .col-md-6
+      p = hospital.description
+
+h1 Doctors
+= render doctors
