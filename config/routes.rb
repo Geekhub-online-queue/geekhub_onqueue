@@ -13,5 +13,4 @@ Rails.application.routes.draw do
   end
   root 'welcome#index'
   get 'specializations/(:id)', to: 'hospital#show', as: :specializations
-  get 'persons/profile', as: 'user_root'
 end
