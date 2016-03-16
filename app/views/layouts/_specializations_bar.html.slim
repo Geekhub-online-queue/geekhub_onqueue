@@ -1,0 +1,6 @@
+ul.nav.nav-tabs.nav-justified
+  li role="presentation" class=('active' unless params[:format])
+   = link_to 'All', hospital
+  - specializations.each do |s|
+    li role="presentation" class=('active' if params[:format].to_i == s.id)
+      = link_to s.title, hospital_path(hospital,s)

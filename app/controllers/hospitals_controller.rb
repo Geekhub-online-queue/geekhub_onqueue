@@ -6,6 +6,8 @@ class HospitalsController < ApplicationController
   expose(:doctor)
   expose(:doctors)
   expose(:records)
+  expose(:specialization)
+  expose(:specializations)
 
   def create
     hospital.save

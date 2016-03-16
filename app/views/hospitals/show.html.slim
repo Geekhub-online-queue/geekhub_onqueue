@@ -9,6 +9,7 @@
       p = hospital.phone
       h4 Address
       p = hospital.address
-      p = hospital.description
-      h1 Doctors
-      = render hospital.doctors
+    p = hospital.description
+    h1 Doctors
+    = render 'layouts/specializations_bar'
+    = render hospital.doctors

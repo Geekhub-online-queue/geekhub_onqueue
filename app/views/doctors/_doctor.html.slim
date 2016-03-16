@@ -1,7 +1,8 @@
-.col-sm-3
-  .thumbnail
-    = link_to image_tag(doctor.photo.url(:medium)), hospital_doctor_path(hospital, doctor)
-    .caption
-      h4 = doctor.name
-      p  = doctor.phone
-      p  = doctor.specialization
+- if (params[:format].to_i == doctor.specialization.id) || !params[:format]
+  .col-sm-3
+    .thumbnail
+      = link_to image_tag(doctor.photo.url(:medium)), hospital_doctor_path(hospital, doctor)
+      .caption
+        h4 = doctor.name
+        p  = doctor.phone
+        p  = doctor.specialization.title
