@@ -1,11 +1,11 @@
 ActiveAdmin.register Doctor do
-  permit_params :photo, :name, :phone, :specialization, :description, :hospital_id, :photo_file_name, :photo_content_type, :photo_file_size, :photo_updated_at
+  permit_params :photo, :name, :phone, :specialization_id, :description, :hospital_id, :photo_file_name, :photo_content_type, :photo_file_size, :photo_updated_at
 
   form :html => { :enctype => "multipart/form-data" } do |f|
    f.inputs "Details" do
     f.input :name
     f.input :phone
-    f.input :specialization
+    f.input :specialization_id, :as => :select, :collection => Specialization.all.map {|u| [u.title.to_s, u.id]}
     f.input :description
     f.input :hospital_id, :as => :select, :collection => Hospital.all.map {|u| [u.title.to_s, u.id]}
     f.input :photo, :as => :file, :hint => f.template.image_tag(f.object.photo.url(:medium))

@@ -1,5 +1,6 @@
 class Doctor < ActiveRecord::Base
   belongs_to :hospital
+  belongs_to :specialization
 
   has_many :records
 

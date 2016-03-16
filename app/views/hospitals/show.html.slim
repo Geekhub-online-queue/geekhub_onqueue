@@ -9,8 +9,7 @@
       p = hospital.phone
       h4 Address
       p = hospital.address
-    .col-md-6
-      p = hospital.description
-
-h1 Doctors
-= render doctors
+    p = hospital.description
+    h1 Doctors
+    = render 'layouts/specializations_bar'
+    = render hospital.doctors
