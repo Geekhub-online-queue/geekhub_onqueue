@@ -3,7 +3,8 @@ source 'https://rubygems.org'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem "rails_12factor"
 gem 'devise'
-gem "twitter-bootstrap-rails"
+gem 'sass-rails', '~> 5.0'
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'pg'
 gem 'friendly_id', '~> 5.0.0'
 gem 'babosa'
