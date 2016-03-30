@@ -4,7 +4,9 @@ nav.navbar.navbar-default
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-left
         li
-          = link_to 'Home', root_path
+          = link_to 'Головна', root_path
+        li
+          = link_to 'Лікарні', hospitals_path
       ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
           li
