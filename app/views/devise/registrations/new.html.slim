@@ -4,7 +4,8 @@ h2 Sign up
   .form-group
     = f.label :photo, class: "col-sm-2 control-label"
     .col-sm-6
-      = f.file_field :photo
+      .div#pictureInput = f.file_field :photo
+      .div#target
   .form-group
     = f.label :username, class: "col-sm-2 control-label"
     .col-sm-6
