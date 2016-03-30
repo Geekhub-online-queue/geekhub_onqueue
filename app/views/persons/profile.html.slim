@@ -1,5 +1,5 @@
 h1.text-center Your profile
 .ul
-  .li = image_tag(current_user.photo.url(:medium))
+  .li = image_tag(current_user.photo.url(download: true))
 
 = link_to "Редактировать", edit_user_registration_path(current_user)

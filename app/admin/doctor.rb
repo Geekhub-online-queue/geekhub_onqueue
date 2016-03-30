@@ -8,7 +8,7 @@ ActiveAdmin.register Doctor do
     f.input :specialization_id, :as => :select, :collection => Specialization.all.map {|u| [u.title.to_s, u.id]}
     f.input :description
     f.input :hospital_id, :as => :select, :collection => Hospital.all.map {|u| [u.title.to_s, u.id]}
-    f.input :photo, :as => :file, :hint => f.template.image_tag(f.object.photo.url(:medium))
+    f.input :photo, :as => :file, :hint => f.template.image_tag(f.object.photo.url(download: true))
   end
   f.actions
 end
