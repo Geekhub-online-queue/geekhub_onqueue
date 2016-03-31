@@ -29,6 +29,5 @@ $(function() {
       $('#target').html(img);
     }
     reader.readAsDataURL(image);
-    console.log(files);
   });
 });
