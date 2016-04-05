@@ -61,8 +61,8 @@
 
 .style_image{
   object-fit: cover;
-  width: 220px;
-  height: 220px;
+  width: 200px;
+  height: 200px;
   border:1px solid #ddd;
   border-radius: 50%;
   box-shadow: 0 2px 5px #aaa;
@@ -73,7 +73,7 @@
 }
 
 .style_image:hover {
-  width: 280px;
-  height: 280px;
+  width: 230px;
+  height: 230px;
   border-radius: 10%;
 }
