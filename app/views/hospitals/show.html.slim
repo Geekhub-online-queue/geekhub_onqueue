@@ -1,7 +1,7 @@
 .container
   .row
     .col-md-3
-      p PLACE FOR PHOTO
+      = image_tag(hospital.photo.url(download: true))
     .col-md-3
       h4 Hospital
       p = hospital.title
