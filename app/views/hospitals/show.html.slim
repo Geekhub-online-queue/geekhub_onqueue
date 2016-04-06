@@ -1,15 +1,13 @@
+.span3.well
+  center
+    = image_tag(hospital.photo.url(download: true), class: "hospit_style")
+    h3 = hospital.title
+    p
+      em = hospital.address
+    p
+      em = hospital.phone
+
 .container
-  .row
-    .col-md-3
-      = image_tag(hospital.photo.url(download: true))
-    .col-md-3
-      h4 Hospital
-      p = hospital.title
-      h4 Phone
-      p = hospital.phone
-      h4 Address
-      p = hospital.address
-  p = hospital.description
   h1 Doctors
   .col-sm-2
     = render 'layouts/specializations_bar'
