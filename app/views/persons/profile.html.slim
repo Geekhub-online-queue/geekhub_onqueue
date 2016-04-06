@@ -1,6 +1,8 @@
-h2
-  = current_user.username
 .col-md-4
   = image_tag(current_user.photo.url(download: true), class: "photo_user")
 .col-md-5
-  = link_to "Редактировать", edit_user_registration_path(current_user)
+  p
+    ' Ім'я:
+    = current_user.username
+  p
+    = current_user.date_of_birth.strftime("%m/%d/%Y")
