@@ -1,4 +1,4 @@
-.col-md-2
+.col-md-3
   = image_tag(current_user.photo.url(download: true), class: "photo_user")
 .col-md-5
   p
@@ -6,7 +6,7 @@
     = current_user.username
   p
     ' Дата народження:
-    = current_user.date_of_birth.strftime("%m/%d/%Y")
+    = current_user.date_of_birth.strftime("%d/%m/%Y")
   p
     'Номер картки:
     = current_user.number_card
