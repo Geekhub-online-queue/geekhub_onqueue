@@ -13,17 +13,20 @@
       p = doctor.specialization.title
   p = doctor.description
 .container
-  .table-striped
-    table.table
-      thead
-        tr
-          th ПІБ
-          th Номер телефону
-          th Час запису
-      tbody
-        = render doctor.records
+  - if doctor.records.empty?
+    span.text-warning Записів немає.
+  - else
+    .table-striped
+      table.table
+        thead
+          tr
+            th ПІБ
+            th Номер телефону
+            th Час запису
+        tbody
+          = render doctor.records
 
 p.text-center
-  = link_to new_hospital_doctor_record_path(doctor.hospital_id, doctor.id), :class=>"btn btn-primary" do
+  = link_to new_hospital_doctor_record_path(doctor.hospital_id, doctor.id), class: 'btn btn-primary' do
     span.glyphicon.glyphicon-pencil
     ' &nbsp Записатися до лікаря
