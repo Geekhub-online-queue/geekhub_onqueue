@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  validates_presence_of :email, :username, :number_card, :date_of_birth, :phone, :password, :password_confirmation, :current_password, :message => "Дані не можуть бути пустими"
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable,
