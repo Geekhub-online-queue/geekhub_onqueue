@@ -1,15 +1,6 @@
-= form_for([hospital, doctor, record], html: {class: 'form-horizontal'}) do |f|
-  .form-group
-    = f.label :name, class: "col-sm-2 control-label"
-    .col-sm-6
-      = f.text_field :name, class: "form-control", autofocus: true, placeholder: "Name"
-  .form-group
-    = f.label :phone, class: "col-sm-2 control-label"
-    .col-sm-6
-      = f.text_field :phone, class: "form-control", placeholder: "Phone"
-  .form-group
-    .col-sm-offset-2.col-sm-6
-      = f.datetime_select :data, :minute_step => 30, :start_year => 2016, :start_hour => 9, :end_hour => 16
-  .form-group
-    .col-sm-offset-2.col-sm-6
-      = f.submit "Create"
+= simple_form_for([hospital, doctor, record]) do |f|
+  .col-sm-offset-1.col-sm-6
+    = f.input :name, autofocus: true, placeholder: "Name"
+    = f.input :phone, class: "form-control", placeholder: "Phone"
+    = f.input :data, as: :datetime, :minute_step => 30, :start_year => 2016, :start_hour => 9, :end_hour => 16
+    = f.button :submit, 'ОК'

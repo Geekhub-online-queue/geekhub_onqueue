@@ -1,42 +1,18 @@
-h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'form-horizontal'}) do |f|
-  = devise_error_messages!
-  .form-group
-    = f.label :photo, class: "col-sm-2 control-label"
-    .col-sm-6
-      .div#pictureInput = f.file_field :photo
+h2 Реєстрація
+= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  /= devise_error_messages!
+  .col-sm-6.col-sm-offset-2
+    .form-group
+      .div#pictureInput = f.input :photo, label: 'Фото', as: :file
       .div#target
-  .form-group
-    = f.label :username, class: "col-sm-2 control-label"
-    .col-sm-6
-      = f.text_field :username, class: "form-control", autofocus: true
-  .form-group
-    = f.label :phone, class: "col-sm-2 control-label"
-    .col-sm-6
-      = f.phone_field :phone, class: "form-control"
-  .form-group
-    = f.label :date_of_birth, class: "col-sm-2 control-label"
-    .col-sm-6
-      = f.date_select :date_of_birth, :start_year => 1900, :end_year => Date.today.year
-  .form-group
-    = f.label :number_card, class: "col-sm-2 control-label"
-    .col-sm-6
-      = f.text_field :number_card, class: "form-control"
-  .form-group
-    = f.label :email, class: "col-sm-2 control-label"
-    .col-sm-6
-      = f.email_field :email, class: "form-control"
-  .form-group
-    = f.label :password, class: "col-sm-2 control-label"
-    .col-sm-6
-      = f.password_field :password, autocomplete: "off", class: "form-control"
-  .form-group
-    = f.label :password_confirmation, class: "col-sm-2 control-label"
-    .col-sm-6
-      = f.password_field :password_confirmation, autocomplete: "off", class: "form-control"
-  .form-group
-    .col-sm-offset-2.col-sm-6
-      = f.submit "Sign up", class: "btn btn-primary"
-  .form-group
-    .col-sm-offset-2.col-sm-6
+    .form-group
+      = f.input :username, label: 'Ім’я', autofocus: true
+      = f.input :phone, label: 'Номер телефону'
+      = f.input :date_of_birth, label: 'Дата народження', as: :date, :start_year => 1900, :end_year => Date.today.year
+      = f.input :number_card, label: 'Номер амбулаторної картки'
+      = f.input :email
+      = f.input :password, label: 'Пароль', autocomplete: "off"
+      = f.input :password_confirmation, label: 'Повторіть пароль', autocomplete: "off"
+      = f.button :submit, 'Зареєструватися', class: "btn btn-primary"
+    .form-group
       = render "devise/shared/links"
