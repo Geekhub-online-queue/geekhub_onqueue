@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   validates_presence_of :email, :username, :number_card, :date_of_birth, :phone, :password, :password_confirmation, :current_password, :message => "Дані не можуть бути пустими"
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, message: 'Не схожий на адресу електронної пошти' }
+  validates :phone, format: { with: /\+\d{12}/, message: 'Приклад: +380XXXXXXXXX' }
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable,
