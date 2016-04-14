@@ -1,6 +1,4 @@
 = simple_form_for([hospital, doctor, record]) do |f|
   .col-sm-offset-1.col-sm-6
-    = f.input :name, autofocus: true, placeholder: "Name"
-    = f.input :phone, class: "form-control", placeholder: "Phone"
     = f.input :data, as: :datetime, :minute_step => 30, :start_year => 2016, :start_hour => 9, :end_hour => 16
     = f.button :submit, 'ОК'
