@@ -8,6 +8,7 @@ class Hospital < ActiveRecord::Base
 
   has_attached_file :photo,
     # :default_url => ActionController::Base.helpers.asset_path('hospitals/missing.png'),
+    :default_url => "hospital_default.png",
     :storage => :dropbox,
     :dropbox_credentials => Rails.root.join("config/dropbox.yml"),
     :dropbox_options => {:path => proc { |style| "hospitals/#{id}/#{style}/#{photo.original_filename}" }}

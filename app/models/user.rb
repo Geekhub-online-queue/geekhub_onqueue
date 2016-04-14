@@ -13,7 +13,8 @@ class User < ActiveRecord::Base
          :validatable
 
   has_attached_file :photo,
-    :default_url => ActionController::Base.helpers.asset_path('users/missing.png'),
+    #:default_url => ActionController::Base.helpers.asset_path('users/missing.png'),
+    :default_url => "user_default.png",
     :storage => :dropbox,
     :dropbox_credentials => Rails.root.join("config/dropbox.yml"),
     :dropbox_options => {:path => proc { |style| "users/#{id}/#{style}/#{photo.original_filename}" }}
