@@ -4,7 +4,7 @@ class RecordsController < DoctorsController
 
   def create
     if record.save
-      record.update_attribute(:doctor_id, doctor.id)
+      record.update_attributes(doctor_id: doctor.id, name: current_user.username, phone: current_user.phone)
       redirect_to(hospital_doctor_path(hospital.id, doctor.id))
     else
       render :new
